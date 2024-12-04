@@ -23,45 +23,16 @@
   width: 72px;
   height: 72px;
   background-color: rgb(255 255 255);
-  border: #0000ff 1px solid;
-}
-
-.c-iCDrnV .c-kIbiaN {
-  width: 160px;
-  height: 200px;
-  background-color: #ed143d00;
-}
-
-.c-kDxFae > .c-iBVlvN {
-  padding: 0 var(--space-5) 0 60px;
+  border: #000000 1px solid;
 }
 /* picture avatar small */
-.c-kIbiaN-iiTsXc-size-small.c-kIbiaN-ibhlLeV-css {
+.c-kIbiaN-iiTsXc-size-small.c-kIbiaN-idcsssr-css {
   width: 50px;
   height: 50px;
   background-size: cover !important;
   background-position: center !important;
   background-color: #ffffff;
   border-radius: 20px;
-}
-
-.vfrc-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; 
-  position: relative; 
-}
-
-.vfrc-header .vfrc-avatar {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-right: 10px;
-}
-
-.c-iCDrnV .c-kfyIxT {
-  margin: 0px 0px 0px 40px;
 }
 
 .c-dzcdPv .vfrc-header--button {
@@ -96,11 +67,11 @@
 }
 
 .c-bXTvXv-lckiv-type-info {
-  background-color: #000dff;
+  background-color: #000000;
 }
 
 .c-bXTvXv-lckiv-type-info:hover {
-  background-color: #000dff;
+  background-color: #161616;
 }
 
 .vfrc-message {
@@ -123,7 +94,7 @@
 
 .vfrc-button--secondary {
   display: inline-block;
-  border: 1px solid #0000ff;
+  border: 1px solid #000000;
   font-size: 16px;
   font-weight: 500;
   border-radius: 20px;
@@ -142,7 +113,7 @@
 
 .vfrc-button--secondary:hover {
   background-color: #add8e6;
-  border-color: rgba(0, 43, 69, 0.7);
+  border-color: rgba(0, 24, 39, 0.7);
 }
 
 .vfrc-header--title {
@@ -161,13 +132,16 @@
 }
 
 .vfrc-launcher {
-  width: 80px;
-  height: 80px;
-  background-color: #fff;
-  border: #0000ff 4px solid;
+  width: 100px;
+  height: 100px;
+  border: none;
   animation: fadeIn 0.5s ease-in-out;
-  transition: transform 150ms ease 0s, opacity 150ms ease 0s !important;
-  box-shadow: #000000;
+  transition: transform 150ms ease 0s !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border: transparent;
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .vfrc-launcher:hover {
@@ -218,21 +192,21 @@
   font-size: 12px;
   font-weight: 400;
   line-height: 17px;
-  color: #000dff;
+  color: #000000;
 }
 
 /* color footer mark/ your brand/ */
 .c-cejRVw a {
-  color: #0000ff;
+  color: #000000;
 }
 
 .vfrc-footer--watermark {
-  color: #0000ff;
+  color: #000000;
 }
 
 /* color header/ change here */
 .vfrc-header {
-  background-color: #000dff;
+  background-color: #000000;
   height: 66px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -245,7 +219,7 @@
 
 /* cancel chat color */
 .c-bXTvXv-igaDqE-type-subtle {
-  background-color: #000dff;
+  background-color: #000000;
   color: #ffffff;
 }
 
@@ -259,13 +233,13 @@
 
 /* message send from user */
 .c-PJLV-gJqBfM-from-user {
-  background-color: #000dff;
+  background-color: #000000;
   color: #ffffff;
   text-align: left !important;
 }
 
 .vfrc-proactive-message {
-  border: blue 1px solid;
+  border: rgb(0, 0, 0) 1px solid;
   text-align: left !important;
 }
 
