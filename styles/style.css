@@ -259,8 +259,8 @@
   }
 }
 
-/* Mobile-specific styles */
-@media screen and (max-width: 767px) {
+/* Mobile-only styles - targeting actual mobile devices */
+@media only screen and (hover: none) and (pointer: coarse) {
   .vfrc-proactive-message {
     font-size: 10px;
     padding: 5px 8px !important;
@@ -297,13 +297,13 @@
     font-size: 11px;
   }
 
-   /* Fixed text input font size on mobile with center alignment */
+  /* Fixed text input font size on mobile with center alignment */
   .vfrc-chat-input textarea,
   .vfrc-chat-input textarea:focus,
   .vfrc-chat-input textarea:active,
   .vfrc-chat-input textarea:focus-visible {
     font-size: 16px !important;
-    text-align: left !important;
+    text-align: center !important;
     -webkit-text-size-adjust: none;
   }
 
@@ -316,13 +316,26 @@
   }
 }
 
-/* Additional fix for iOS font size adjustment */
-@media screen and (max-width: 767px) and (max-device-width: 767px) {
+/* Additional iOS-specific adjustments */
+@media only screen and (hover: none) and (pointer: coarse) and (-webkit-min-device-pixel-ratio: 2) {
   .vfrc-chat-input textarea,
   .vfrc-chat-input textarea:focus,
   .vfrc-chat-input textarea:active,
   .vfrc-chat-input textarea:focus-visible {
-    font-size: 11px !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    -webkit-text-size-adjust: none;
+  }
+}
+
+/* Additional Android-specific adjustments */
+@media only screen and (hover: none) and (pointer: coarse) and (-webkit-device-pixel-ratio: 1.5) {
+  .vfrc-chat-input textarea,
+  .vfrc-chat-input textarea:focus,
+  .vfrc-chat-input textarea:active,
+  .vfrc-chat-input textarea:focus-visible {
+    font-size: 16px !important;
+    text-align: center !important;
     -webkit-text-size-adjust: none;
   }
 }
