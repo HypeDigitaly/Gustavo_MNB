@@ -297,12 +297,13 @@
     font-size: 11px;
   }
 
-  /* Fixed text input font size on mobile */
+   /* Fixed text input font size on mobile with center alignment */
   .vfrc-chat-input textarea,
   .vfrc-chat-input textarea:focus,
   .vfrc-chat-input textarea:active,
   .vfrc-chat-input textarea:focus-visible {
-    font-size: 11px !important;
+    font-size: 13px !important;
+    text-align: center !important;
     -webkit-text-size-adjust: none;
   }
 
