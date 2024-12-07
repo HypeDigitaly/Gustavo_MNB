@@ -130,7 +130,7 @@
 
 .vfrc-header--title {
   color: #fffffffa;
-  font-size: 16px;
+  font-size: 18px;  /* Updated: Increased by 2px */
 }
 
 .vfrc-launcher img {
@@ -154,8 +154,9 @@
   background-size: cover !important;
   background-position: center !important;
   border: transparent;
-  background-color: transparent;
+  background-color: #ffffff !important;  /* Updated: Changed to white background */
   box-shadow: none;
+  border-radius: 50%;  /* Added for circular shape */
 }
 
 .vfrc-launcher:hover {
@@ -197,14 +198,14 @@
   background-color: none;
 }
 
-/* text footer mark */
+/* text footer mark - Updated size and weight */
 .c-cejRVw {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px 0 var(--space-3) 0;
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 15px;  /* Updated: Increased by 3px */
+  font-weight: 700;  /* Updated: Changed to bold */
   line-height: 17px;
   color: #000000;
 }
@@ -292,11 +293,12 @@
   }
 
   .vfrc-header--title {
-    font-size: 11px;
+    font-size: 13px;  /* Updated proportionally */
   }
 
   .c-cejRVw {
-    font-size: 8px;
+    font-size: 11px;  /* Updated proportionally */
+    font-weight: 700;  /* Keeping bold in mobile */
   }
 
   .vfrc-assistant-info--description {
