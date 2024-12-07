@@ -135,14 +135,6 @@
   font-weight: 700;
 }
 
-/* Mobile-specific styles */
-@media screen and (max-width: 767px) {
-  .vfrc-proactive-message {
-    font-size: 10px;
-    padding: 5px 8px !important;
-  }
-}
-
 .vfrc-launcher {
   width: 75px;
   height: 75px;
