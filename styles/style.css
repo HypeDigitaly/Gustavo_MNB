@@ -128,7 +128,16 @@
 }
 
 .vfrc-proactive-message {
+  border: rgb(0, 0, 0) 1px solid;
+  text-align: left !important;
   font-weight: 700;
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 767px) {
+  .vfrc-proactive-message {
+    font-size: 8px;  /* Small font size only on mobile */
+  }
 }
 
 .vfrc-launcher {
