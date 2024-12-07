@@ -94,19 +94,15 @@
   margin-left: -1px;
 }
 
-/* Updated text input styling with increased padding and smaller area */
+/* Updated text input styling with vertical alignment and padding */
 .vfrc-chat-input textarea {
   text-align: left;
   font-size: 16px;
   color: #000000;
-  padding: 8px 15px;
+  padding-left: 5px;
   display: flex;
   align-items: center;
   vertical-align: middle;
-  width: 80%;
-  min-height: 40px;
-  resize: none;
-  box-sizing: border-box;
 }
 
 .vfrc-button--secondary {
@@ -273,6 +269,7 @@
     padding: 5px 8px !important;
   }
 
+  /* Updated header caption size for mobile */
   .vfrc-assistant-info--title {
     font-size: 13px;
   }
@@ -306,7 +303,7 @@
     font-size: 11px;
   }
 
-  /* Updated mobile text input styling */
+  /* Mobile user input styling */
   .vfrc-chat-input textarea,
   .vfrc-chat-input textarea:focus,
   .vfrc-chat-input textarea:active,
@@ -314,10 +311,7 @@
     font-size: 13px !important;
     text-align: left !important;
     -webkit-text-size-adjust: none;
-    padding: 8px 15px !important;
-    width: 75%;
-    min-height: 40px;
-    resize: none;
+    padding-left: 10px;
   }
 
   .vfrc-chat-input--button {
@@ -346,10 +340,7 @@
       font-size: 13px !important;
       text-align: left !important;
       -webkit-text-size-adjust: none;
-      padding: 8px 15px !important;
-      width: 75%;
-      min-height: 40px;
-      resize: none;
+      padding-left: 10px;
     }
 
     .c-PJLV-gJqBfM-from-user {
@@ -378,10 +369,7 @@
     font-size: 13px !important;
     text-align: left !important;
     -webkit-text-size-adjust: none;
-    padding: 8px 15px !important;
-    width: 75%;
-    min-height: 40px;
-    resize: none;
+    padding-left: 10px;
   }
 
   .c-PJLV-gJqBfM-from-user {
