@@ -268,40 +268,60 @@
 
   /* Reduce font sizes by ~30% for mobile */
   .vfrc-assistant-info--title {
-    font-size: 14px;  /* Reduced from 20px */
+    font-size: 14px;
   }
 
   .vfrc-message {
-    font-size: 11px;  /* Reduced from 16px */
+    font-size: 11px;
   }
 
+  /* AI Assistant messages slightly larger */
+  .c-PJLV-jueArD-from-system {
+    font-size: 13px;
+  }
+
+  /* Button captions slightly larger */
   .vfrc-button--secondary {
-    font-size: 11px;  /* Reduced from 16px */
+    font-size: 13px;
   }
 
   .vfrc-header--title {
-    font-size: 11px;  /* Reduced from 16px */
+    font-size: 11px;
   }
 
   .c-cejRVw {
-    font-size: 8px;  /* Reduced from 12px */
+    font-size: 8px;
   }
 
   .vfrc-assistant-info--description {
-    font-size: 11px;  /* Reduced from default */
+    font-size: 11px;
   }
 
-  .vfrc-chat-input textarea {
-    font-size: 11px;  /* Reduced from default */
+  /* Fixed text input font size on mobile */
+  .vfrc-chat-input textarea,
+  .vfrc-chat-input textarea:focus,
+  .vfrc-chat-input textarea:active,
+  .vfrc-chat-input textarea:focus-visible {
+    font-size: 11px !important;
+    -webkit-text-size-adjust: none;
   }
 
   .vfrc-chat-input--button {
-    font-size: 11px;  /* Reduced from default */
+    font-size: 11px;
   }
   
-  /* Additional text elements that might need reduction */
-  .c-PJLV-jueArD-from-system,
   .c-PJLV-gJqBfM-from-user {
     font-size: 11px;
+  }
+}
+
+/* Additional fix for iOS font size adjustment */
+@media screen and (max-width: 767px) and (max-device-width: 767px) {
+  .vfrc-chat-input textarea,
+  .vfrc-chat-input textarea:focus,
+  .vfrc-chat-input textarea:active,
+  .vfrc-chat-input textarea:focus-visible {
+    font-size: 11px !important;
+    -webkit-text-size-adjust: none;
   }
 }
