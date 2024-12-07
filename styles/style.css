@@ -230,8 +230,12 @@
   color: #ffffff;
 }
 
+/* AI message styling with increased width */
 .c-PJLV-jueArD-from-system {
   text-align: left !important;
+  width: 125% !important;
+  max-width: 125% !important;
+  margin-right: -25% !important;
 }
 
 /* message send from user */
@@ -246,11 +250,12 @@
   text-align: left !important;
 }
 
-/* Default text input styling */
+/* Text input styling - left alignment for all devices */
 .vfrc-chat-input textarea {
-  text-align: center;
+  text-align: left;
   font-size: 14px;
   color: #000000;
+  padding-left: 10px;
 }
 
 /* Mobile-only styles */
@@ -297,6 +302,7 @@
     font-size: 14px !important;
     text-align: left !important;
     -webkit-text-size-adjust: none;
+    padding-left: 10px;
   }
 
   .vfrc-chat-input--button {
@@ -318,6 +324,7 @@
       font-size: 14px !important;
       text-align: left !important;
       -webkit-text-size-adjust: none;
+      padding-left: 10px;
     }
   }
 }
@@ -332,6 +339,7 @@
     font-size: 14px !important;
     text-align: left !important;
     -webkit-text-size-adjust: none;
+    padding-left: 10px;
   }
 }
 
