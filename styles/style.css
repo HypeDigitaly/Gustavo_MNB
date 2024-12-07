@@ -94,6 +94,17 @@
   margin-left: -1px;
 }
 
+/* Updated text input styling with vertical alignment and padding */
+.vfrc-chat-input textarea {
+  text-align: left;
+  font-size: 16px;
+  color: #000000;
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
 .vfrc-button--secondary {
   display: inline-block;
   border: 1px solid #000000;
@@ -249,14 +260,6 @@
   text-align: left !important;
 }
 
-/* Base text input styling */
-.vfrc-chat-input textarea {
-  text-align: left;
-  font-size: 16px;
-  color: #000000;
-  padding-left: 10px;
-}
-
 /* Mobile-only styles */
 @media (max-width: 767px) and (any-pointer: coarse) and (any-hover: none), 
        (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2),
@@ -266,8 +269,9 @@
     padding: 5px 8px !important;
   }
 
+  /* Updated header caption size for mobile */
   .vfrc-assistant-info--title {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .vfrc-message {
