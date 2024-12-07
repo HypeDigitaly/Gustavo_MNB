@@ -266,3 +266,50 @@
     border-radius: 20px;
   }
 }
+
+/* Mobile-specific styles */
+@media screen and (max-width: 767px) {
+  .vfrc-proactive-message {
+    font-size: 10px;
+    padding: 5px 8px !important;
+  }
+
+  /* Reduce font sizes by ~30% for mobile */
+  .vfrc-assistant-info--title {
+    font-size: 14px;  /* Reduced from 20px */
+  }
+
+  .vfrc-message {
+    font-size: 11px;  /* Reduced from 16px */
+  }
+
+  .vfrc-button--secondary {
+    font-size: 11px;  /* Reduced from 16px */
+  }
+
+  .vfrc-header--title {
+    font-size: 11px;  /* Reduced from 16px */
+  }
+
+  .c-cejRVw {
+    font-size: 8px;  /* Reduced from 12px */
+  }
+
+  .vfrc-assistant-info--description {
+    font-size: 11px;  /* Reduced from default */
+  }
+
+  .vfrc-chat-input textarea {
+    font-size: 11px;  /* Reduced from default */
+  }
+
+  .vfrc-chat-input--button {
+    font-size: 11px;  /* Reduced from default */
+  }
+  
+  /* Additional text elements that might need reduction */
+  .c-PJLV-jueArD-from-system,
+  .c-PJLV-gJqBfM-from-user {
+    font-size: 11px;
+  }
+}
