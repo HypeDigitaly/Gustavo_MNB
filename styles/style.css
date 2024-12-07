@@ -230,19 +230,18 @@
   color: #ffffff;
 }
 
-/* AI message styling with increased width */
+/* Base AI message styling */
 .c-PJLV-jueArD-from-system {
   text-align: left !important;
-  width: 125% !important;
-  max-width: 125% !important;
-  margin-right: -25% !important;
+  font-size: 16px;
 }
 
-/* message send from user */
+/* Base user message styling */
 .c-PJLV-gJqBfM-from-user {
   background-color: #000000;
   color: #ffffff;
   text-align: left !important;
+  font-size: 16px;
 }
 
 .vfrc-proactive-message {
@@ -250,10 +249,10 @@
   text-align: left !important;
 }
 
-/* Text input styling - left alignment for all devices */
+/* Base text input styling */
 .vfrc-chat-input textarea {
   text-align: left;
-  font-size: 14px;
+  font-size: 16px;
   color: #000000;
   padding-left: 10px;
 }
@@ -275,12 +274,17 @@
     font-size: 11px;
   }
 
+  /* Mobile-specific AI message styling */
   .c-PJLV-jueArD-from-system {
+    width: 125% !important;
+    max-width: 125% !important;
+    margin-right: -25% !important;
     font-size: 13px;
   }
 
   .vfrc-button--secondary {
     font-size: 13px;
+    margin-left: 10px !important;
   }
 
   .vfrc-header--title {
@@ -295,11 +299,12 @@
     font-size: 11px;
   }
 
+  /* Mobile user input styling */
   .vfrc-chat-input textarea,
   .vfrc-chat-input textarea:focus,
   .vfrc-chat-input textarea:active,
   .vfrc-chat-input textarea:focus-visible {
-    font-size: 14px !important;
+    font-size: 13px !important;
     text-align: left !important;
     -webkit-text-size-adjust: none;
     padding-left: 10px;
@@ -309,22 +314,37 @@
     font-size: 11px;
   }
   
+  /* Mobile user message styling */
   .c-PJLV-gJqBfM-from-user {
-    font-size: 11px;
+    font-size: 13px !important;
   }
 }
 
 /* iOS-specific fixes */
 @supports (-webkit-touch-callout: none) {
   @media (max-width: 767px) {
+    .c-PJLV-jueArD-from-system {
+      width: 125% !important;
+      max-width: 125% !important;
+      margin-right: -25% !important;
+    }
+
     .vfrc-chat-input textarea,
     .vfrc-chat-input textarea:focus,
     .vfrc-chat-input textarea:active,
     .vfrc-chat-input textarea:focus-visible {
-      font-size: 14px !important;
+      font-size: 13px !important;
       text-align: left !important;
       -webkit-text-size-adjust: none;
       padding-left: 10px;
+    }
+
+    .c-PJLV-gJqBfM-from-user {
+      font-size: 13px !important;
+    }
+
+    .vfrc-button--secondary {
+      margin-left: 10px !important;
     }
   }
 }
@@ -332,14 +352,28 @@
 /* Additional mobile detection for older devices */
 @media only screen and (max-device-width: 767px),
        only screen and (max-device-height: 767px) and (orientation: landscape) {
+  .c-PJLV-jueArD-from-system {
+    width: 125% !important;
+    max-width: 125% !important;
+    margin-right: -25% !important;
+  }
+
   .vfrc-chat-input textarea,
   .vfrc-chat-input textarea:focus,
   .vfrc-chat-input textarea:active,
   .vfrc-chat-input textarea:focus-visible {
-    font-size: 14px !important;
+    font-size: 13px !important;
     text-align: left !important;
     -webkit-text-size-adjust: none;
     padding-left: 10px;
+  }
+
+  .c-PJLV-gJqBfM-from-user {
+    font-size: 13px !important;
+  }
+
+  .vfrc-button--secondary {
+    margin-left: 10px !important;
   }
 }
 
