@@ -290,6 +290,7 @@
   .vfrc-button--secondary {
     font-size: 13px;
     margin-left: 10px !important;
+    margin-right: -3px !important;  /* Added for closer button spacing */
   }
 
   .vfrc-header--title {
@@ -351,6 +352,7 @@
 
     .vfrc-button--secondary {
       margin-left: 10px !important;
+      margin-right: -3px !important;  /* Added for closer button spacing */
     }
   }
 }
@@ -380,6 +382,7 @@
 
   .vfrc-button--secondary {
     margin-left: 10px !important;
+    margin-right: -3px !important;  /* Added for closer button spacing */
   }
 }
 
