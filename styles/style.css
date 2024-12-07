@@ -302,8 +302,8 @@
   .vfrc-chat-input textarea:focus,
   .vfrc-chat-input textarea:active,
   .vfrc-chat-input textarea:focus-visible {
-    font-size: 13px !important;
-    text-align: center !important;
+    font-size: 16px !important;
+    text-align: left !important;
     -webkit-text-size-adjust: none;
   }
 
