@@ -7,7 +7,7 @@
 }
 
 .vfrc-assistant-info--title {
-  font-size: 20px;  /* Already matches */
+  font-size: 20px;
 }
 
 .vfrc-assistant-info--description {
@@ -78,7 +78,7 @@
 .vfrc-message {
   font-weight: 400;
   border-radius: 20px;
-  font-size: 16px;  /* Updated to match second file's default font size */
+  font-size: 16px;
 }
 
 .c-fYYkXN {
@@ -97,7 +97,7 @@
 .vfrc-button--secondary {
   display: inline-block;
   border: 1px solid #000000;
-  font-size: 16px;  /* Already matches */
+  font-size: 16px;
   font-weight: 500;
   border-radius: 20px;
   padding: 9px 13px;
@@ -110,7 +110,6 @@
     border-color 100ms ease-in-out 0s;
   white-space: normal;
   text-align: left;
-  font-size: 16px;  /* Already matches */
 }
 
 .vfrc-button--secondary:hover {
@@ -120,7 +119,7 @@
 
 .vfrc-header--title {
   color: #fffffffa;
-  font-size: 16px;  /* Already matches */
+  font-size: 16px;
 }
 
 .vfrc-launcher img {
@@ -193,7 +192,7 @@
   justify-content: center;
   align-items: center;
   padding: 10px 0 var(--space-3) 0;
-  font-size: 12px;  /* Already matches */
+  font-size: 12px;
   font-weight: 400;
   line-height: 17px;
   color: #000000;
@@ -247,26 +246,22 @@
   text-align: left !important;
 }
 
-/* color text area */
-.vfrc-chat-input textarea,
-.vfrc-chat-input--button {
+/* Default text input styling */
+.vfrc-chat-input textarea {
+  text-align: center;
+  font-size: 14px;
   color: #000000;
 }
 
-@media screen and (min-width: 768px) {
-  .vfrc-widget--chat {
-    border-radius: 20px;
-  }
-}
-
-/* Mobile-only styles - targeting actual mobile devices */
-@media only screen and (hover: none) and (pointer: coarse) {
+/* Mobile-only styles */
+@media (max-width: 767px) and (any-pointer: coarse) and (any-hover: none), 
+       (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2),
+       (max-width: 767px) and (min-resolution: 192dpi) {
   .vfrc-proactive-message {
     font-size: 10px;
     padding: 5px 8px !important;
   }
 
-  /* Reduce font sizes by ~30% for mobile */
   .vfrc-assistant-info--title {
     font-size: 14px;
   }
@@ -275,12 +270,10 @@
     font-size: 11px;
   }
 
-  /* AI Assistant messages slightly larger */
   .c-PJLV-jueArD-from-system {
     font-size: 13px;
   }
 
-  /* Button captions slightly larger */
   .vfrc-button--secondary {
     font-size: 13px;
   }
@@ -297,13 +290,12 @@
     font-size: 11px;
   }
 
-  /* Fixed text input font size on mobile with center alignment */
   .vfrc-chat-input textarea,
   .vfrc-chat-input textarea:focus,
   .vfrc-chat-input textarea:active,
   .vfrc-chat-input textarea:focus-visible {
-    font-size: 16px !important;
-    text-align: center !important;
+    font-size: 14px !important;
+    text-align: left !important;
     -webkit-text-size-adjust: none;
   }
 
@@ -316,26 +308,35 @@
   }
 }
 
-/* Additional iOS-specific adjustments */
-@media only screen and (hover: none) and (pointer: coarse) and (-webkit-min-device-pixel-ratio: 2) {
+/* iOS-specific fixes */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 767px) {
+    .vfrc-chat-input textarea,
+    .vfrc-chat-input textarea:focus,
+    .vfrc-chat-input textarea:active,
+    .vfrc-chat-input textarea:focus-visible {
+      font-size: 14px !important;
+      text-align: left !important;
+      -webkit-text-size-adjust: none;
+    }
+  }
+}
+
+/* Additional mobile detection for older devices */
+@media only screen and (max-device-width: 767px),
+       only screen and (max-device-height: 767px) and (orientation: landscape) {
   .vfrc-chat-input textarea,
   .vfrc-chat-input textarea:focus,
   .vfrc-chat-input textarea:active,
   .vfrc-chat-input textarea:focus-visible {
-    font-size: 16px !important;
-    text-align: center !important;
+    font-size: 14px !important;
+    text-align: left !important;
     -webkit-text-size-adjust: none;
   }
 }
 
-/* Additional Android-specific adjustments */
-@media only screen and (hover: none) and (pointer: coarse) and (-webkit-device-pixel-ratio: 1.5) {
-  .vfrc-chat-input textarea,
-  .vfrc-chat-input textarea:focus,
-  .vfrc-chat-input textarea:active,
-  .vfrc-chat-input textarea:focus-visible {
-    font-size: 16px !important;
-    text-align: center !important;
-    -webkit-text-size-adjust: none;
+@media screen and (min-width: 768px) {
+  .vfrc-widget--chat {
+    border-radius: 20px;
   }
 }
