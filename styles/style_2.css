@@ -476,7 +476,7 @@ div._6r9xee3.o231sh1 > * {
   /* Container for proactive messages - Corrected alignment and width behavior */
   ._6r9xee0 {
     margin-bottom: 50px !important;
-    right: 15px !important; /* Align to the right edge (consistent with launcher) */
+    right: 0 !important; /* Align to parent's right edge */
     position: absolute !important;
     bottom: 100% !important;
     /* Remove width and padding constraints to allow natural sizing */
@@ -532,7 +532,9 @@ div._6r9xee3.o231sh1 > * {
   /* Container for proactive messages on small screens */
   ._6r9xee0 {
     margin-bottom: 45px !important;
-    right: 15px !important; /* Ensure alignment consistency */
+    right: 0 !important; /* Align to parent's right edge */
+    position: absolute !important; /* Reiterate for clarity */
+    bottom: 100% !important; /* Reiterate for clarity */
     /* Ensure no width/padding overrides */
   }
 }
