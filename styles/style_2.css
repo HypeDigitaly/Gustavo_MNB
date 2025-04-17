@@ -466,25 +466,30 @@ div._6r9xee3.o231sh1 > * {
     border: 3px solid #333 !important;
   }
 
-  /* Fix proactive messages scaling */
+  /* Directly target the message bubbles to force right alignment */
   ._6r9xee3.o231sh1 {
     transform: scale(0.85) !important;
-    transform-origin: bottom right !important;
-    max-width: 280px !important; /* Allow message to be wider */
+    transform-origin: right center !important;
+    max-width: 280px !important;
+    margin-left: auto !important; /* Push to the right edge */
+    margin-right: 0 !important; /* Ensure no right margin */
+    float: right !important; /* Additional right alignment */
+    clear: both !important; /* Prevent wrapping issues */
   }
 
-  /* Container for proactive messages - Positioning ONLY */
+  /* Container for proactive messages */
   ._6r9xee0 {
     margin-bottom: 50px !important;
-    right: 0 !important; /* Align container to parent's right edge */
+    right: 0 !important;
     position: absolute !important;
     bottom: 100% !important;
-    /* Removed display:flex, flex-direction, align-items */
+    width: 100% !important; /* Full width container */
   }
 
-  /* Inner container holding the message bubbles - Align items to the right */
+  /* The parent container of the bubbles */
   ._6r9xee4 {
-     align-items: flex-end !important;
+    width: 100% !important; /* Full width container */
+    padding-right: 0 !important; /* No right padding */
   }
 }
 
@@ -526,12 +531,15 @@ div._6r9xee3.o231sh1 > * {
     border: 3px solid #333 !important;
   }
 
-  /* Adjust proactive messages scaling for small screens */
+  /* Direct targeting for small screens */
   ._6r9xee3.o231sh1 {
     transform: scale(0.8) !important;
-    transform-origin: bottom right !important;
-    max-width: 240px !important; /* Slightly narrower max-width for small screens */
-     /* Ensure no relative positioning overrides */
+    transform-origin: right center !important;
+    max-width: 240px !important;
+    margin-left: auto !important; /* Push to the right edge */
+    margin-right: 0 !important; /* Ensure no right margin */
+    float: right !important; /* Additional right alignment */
+    clear: both !important; /* Prevent wrapping issues */
   }
 
   /* Container for proactive messages on small screens - Positioning ONLY */
