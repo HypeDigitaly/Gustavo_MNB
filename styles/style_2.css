@@ -48,7 +48,7 @@ div.f6dof87.f6dof89 {
   max-width: 100px !important;
   max-height: 100px !important;
   background-color: white !important;
-  border: 2px solid #333 !important;
+  border: 4px double #333 !important;
   border-radius: 50% !important;
   overflow: hidden !important;
   display: flex !important;
@@ -392,7 +392,7 @@ div._6r9xee3.o231sh1 {
   position: relative !important;
   z-index: 0 !important;
   border-radius: 10px !important;
-  background-color: #333 !important;
+  background-color: transparent !important;
   color: #1a1e23 !important;
   opacity: 1 !important;
 
