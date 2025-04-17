@@ -466,15 +466,14 @@ div._6r9xee3.o231sh1 > * {
     border: 3px solid #333 !important;
   }
 
-  /* Directly target the message bubbles to force right alignment */
+  /* Directly target the message bubbles to align with launcher image */
   ._6r9xee3.o231sh1 {
     transform: scale(0.85) !important;
     transform-origin: right center !important;
     max-width: 280px !important;
-    margin-left: auto !important; /* Push to the right edge */
-    margin-right: 0 !important; /* Ensure no right margin */
-    float: right !important; /* Additional right alignment */
-    clear: both !important; /* Prevent wrapping issues */
+    margin-left: auto !important; /* Push to right */
+    margin-right: 15px !important; /* Match the launcher's right margin */
+    float: none !important; /* Remove floating */
   }
 
   /* Container for proactive messages */
@@ -483,13 +482,17 @@ div._6r9xee3.o231sh1 > * {
     right: 0 !important;
     position: absolute !important;
     bottom: 100% !important;
-    width: 100% !important; /* Full width container */
+    width: 100% !important;
+    padding-right: 15px !important; /* Add padding to match launcher position */
   }
 
   /* The parent container of the bubbles */
   ._6r9xee4 {
-    width: 100% !important; /* Full width container */
-    padding-right: 0 !important; /* No right padding */
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    padding-right: 0 !important;
   }
 }
 
@@ -531,15 +534,13 @@ div._6r9xee3.o231sh1 > * {
     border: 3px solid #333 !important;
   }
 
-  /* Direct targeting for small screens */
   ._6r9xee3.o231sh1 {
     transform: scale(0.8) !important;
     transform-origin: right center !important;
     max-width: 240px !important;
-    margin-left: auto !important; /* Push to the right edge */
-    margin-right: 0 !important; /* Ensure no right margin */
-    float: right !important; /* Additional right alignment */
-    clear: both !important; /* Prevent wrapping issues */
+    margin-left: auto !important;
+    margin-right: 15px !important; /* Match the launcher's right margin */
+    float: none !important;
   }
 
   /* Container for proactive messages on small screens - Positioning ONLY */
