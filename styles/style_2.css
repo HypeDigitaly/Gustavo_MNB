@@ -110,6 +110,7 @@ div.f6dof80:has(img[alt="open chat"]) {
   transform: none !important;
   aspect-ratio: 1/1 !important;
   animation: pulseImageGlow 2.5s ease-in-out infinite !important;
+  background-color: white !important;
 }
 
 /* Keyframes for the image glow pulse */
