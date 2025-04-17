@@ -466,14 +466,25 @@ div._6r9xee3.o231sh1 > * {
     border: 3px solid #333 !important;
   }
 
-  /* Directly target the message bubbles to align with launcher image */
+  /* Adjust message bubbles for proper spacing, padding and sizing */
   ._6r9xee3.o231sh1 {
     transform: scale(0.85) !important;
     transform-origin: right center !important;
     max-width: 280px !important;
+    min-width: 240px !important; /* Ensure minimum width for better appearance */
     margin-left: auto !important; /* Push to right */
     margin-right: 15px !important; /* Match the launcher's right margin */
+    margin-bottom: 8px !important; /* Space between messages */
+    padding: 12px 16px !important; /* Increase internal padding */
     float: none !important; /* Remove floating */
+    border-radius: 12px !important; /* Slightly rounder corners */
+  }
+
+  /* Improve text inside bubbles */
+  ._6r9xee3.o231sh1 > div {
+    padding: 0 !important; /* Remove any internal div padding */
+    font-size: 15px !important; /* Better text size */
+    line-height: 1.4 !important; /* Better line height */
   }
 
   /* Container for proactive messages */
@@ -483,7 +494,7 @@ div._6r9xee3.o231sh1 > * {
     position: absolute !important;
     bottom: 100% !important;
     width: 100% !important;
-    padding-right: 15px !important; /* Add padding to match launcher position */
+    padding-right: 15px !important;
   }
 
   /* The parent container of the bubbles */
@@ -493,6 +504,7 @@ div._6r9xee3.o231sh1 > * {
     flex-direction: column !important;
     align-items: flex-end !important;
     padding-right: 0 !important;
+    gap: 8px !important; /* Consistent spacing between messages */
   }
 }
 
@@ -537,24 +549,18 @@ div._6r9xee3.o231sh1 > * {
   ._6r9xee3.o231sh1 {
     transform: scale(0.8) !important;
     transform-origin: right center !important;
-    max-width: 240px !important;
+    max-width: 260px !important; /* Slightly wider for better text flow */
+    min-width: 220px !important; /* Ensure minimum width */
     margin-left: auto !important;
-    margin-right: 15px !important; /* Match the launcher's right margin */
+    margin-right: 15px !important;
+    margin-bottom: 8px !important; /* Space between messages */
+    padding: 12px 16px !important; /* Increase internal padding */
     float: none !important;
+    border-radius: 12px !important;
   }
-
-  /* Container for proactive messages on small screens - Positioning ONLY */
-  ._6r9xee0 {
-    margin-bottom: 45px !important;
-    right: 0 !important; /* Align container to parent's right edge */
-    position: absolute !important; /* Reiterate for clarity */
-    bottom: 100% !important; /* Reiterate for clarity */
-    /* Removed display:flex, flex-direction, align-items */
-    /* Ensure no width/padding overrides */
-  }
-
-  /* Inner container holding the message bubbles - Align items to the right */
-   ._6r9xee4 {
-     align-items: flex-end !important;
+  
+  /* The parent container of the bubbles */
+  ._6r9xee4 {
+    gap: 8px !important; /* Consistent spacing */
   }
 }
