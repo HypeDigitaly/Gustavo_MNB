@@ -47,28 +47,22 @@ div.f6dof87.f6dof89 {
   min-height: 100px !important;
   max-width: 100px !important;
   max-height: 100px !important;
-  background-color: white !important;
-  border: 2px solid #333 !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+  animation: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 50px !important;
+  overflow: visible !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   padding: 0 !important;
   margin: 0 !important;
-  box-sizing: border-box !important;
+  box-sizing: content-box !important;
   transform: none !important;
   position: fixed !important;
   bottom: 15px !important;
   right: 15px !important;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
-}
-
-/* Hover effect for closed state button */
-.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(img[alt="open chat"]):hover,
-.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(.f6dof8u.f6dof8w.f6dof8h):hover {
-  transform: scale(1.05) !important;
-  box-shadow: 0 0 15px rgba(51, 51, 51, 0.5) !important;
 }
 
 /* Additional selectors for parent container in closed state */
@@ -81,46 +75,55 @@ div.f6dof80:has(img[alt="open chat"]) {
   max-height: 100px !important;
 }
 
-/* Immediate image container in closed state - Minimal styling */
+/* Immediate image container in closed state */
 .vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(img[alt="open chat"]) div.f6dof87.f6dof89,
 .vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(img[alt="open chat"]) div.f6dof86.f6dof88 {
-  /* Remove sizing, radius, overflow - let the button and image handle it */
-  width: auto !important;
-  height: auto !important;
-  min-width: auto !important;
-  min-height: auto !important;
-  max-width: none !important;
-  max-height: none !important;
-  display: flex !important; /* Keep flex for alignment if needed */
+  width: 100px !important;
+  height: 100px !important;
+  min-width: 100px !important;
+  min-height: 100px !important;
+  max-width: 100px !important;
+  max-height: 100px !important;
+  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  border-radius: 0 !important;
-  overflow: visible !important;
-  box-sizing: border-box !important;
 }
 
-/* Target the actual image in closed state - Apply size, cover, and radius */
+/* Target the actual image in closed state */
 .vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5 img.f6dof8u.f6dof8w.f6dof8h,
 .vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5 img[alt="open chat"] {
-  width: 92px !important;   /* Size to fit inside the border */
-  height: 92px !important;  /* Size to fit inside the border */
-  min-width: 92px !important;
-  min-height: 92px !important;
-  max-width: 92px !important;
-  max-height: 92px !important;
-  border-radius: 50% !important; /* Make image circular */
-  object-fit: cover !important;  /* Fill the 92x92 space */
+  width: 100px !important;
+  height: 100px !important;
+  min-width: 100px !important;
+  min-height: 100px !important;
+  max-width: 100px !important;
+  max-height: 100px !important;
+  border-radius: 50px !important;
+  border: 4px solid #333 !important;
+  object-fit: contain !important;
   object-position: center !important;
+  transition: all 0.3s ease !important;
   display: block !important;
   padding: 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
+  margin: 0 auto !important;
+  box-sizing: content-box !important;
   transform: none !important;
-  /* overflow: hidden !important; /* Redundant if parent button clips */
+  aspect-ratio: 1/1 !important;
+  animation: pulseImageGlow 2.5s ease-in-out infinite !important;
 }
 
 /* Keyframes for the image glow pulse */
-/* @keyframes pulseImageGlow { ... } */ /* Commented out as animation is removed */
+@keyframes pulseImageGlow {
+  0% {
+    box-shadow: 0 0 8px 2px rgba(51, 51, 51, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 16px 6px rgba(51, 51, 51, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 8px 2px rgba(51, 51, 51, 0.6);
+  }
+}
 
 /* ================= OPENED STATE STYLING ================= */
 /* Main container in opened state */
@@ -141,6 +144,8 @@ button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c
   background-color: #333 !important;
   border-radius: 9999px !important;
   overflow: hidden !important;
+  transition: none !important;
+  animation: none !important;
   transform: none !important;
   display: flex !important;
   align-items: center !important;
@@ -335,7 +340,7 @@ div[class^="t1cwqp"]::after,
 div[class*="t1cwqp"]::after {
     content: "Chat byl ukončen" !important;
     visibility: visible !important;
-    color: #5F7CA0 !important;
+    color: #333 !important;
     font-family: "Open Sans", Arial, sans-serif !important;
     font-size: 14px !important;
     font-weight: 600 !important;
@@ -348,7 +353,6 @@ div[class*="t1cwqp"]::after {
     width: 100% !important;
     display: block !important;
 }
-
 
 /* Remove all previous translation attempts */
 div[class*="t1cwqp"]::before,
@@ -392,17 +396,27 @@ div._6r9xee3.o231sh1 {
   position: relative !important;
   z-index: 0 !important;
   border-radius: 10px !important;
-  background-color: white !important;
+  background-color: #fff !important; /* Restore static background */
   color: #1a1e23 !important;
   opacity: 1 !important;
 
   /* Restore ONLY scale pulse animation */
-  /* animation: pulseScale 1.8s ease-in-out infinite !important; */
+  animation: pulseScale 1.8s ease-in-out infinite !important;
   transform-origin: center center !important;
 }
 
 /* Restore Keyframes for the pulsing scale */
-/* @keyframes pulseScale { ... } */
+@keyframes pulseScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04); /* Slightly larger */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 /* REMOVE Keyframes for pulsing background color */
 /* @keyframes pulseColor { ... } */
@@ -411,63 +425,4 @@ div._6r9xee3.o231sh1 {
 div._6r9xee3.o231sh1 > * {
     position: relative;
     z-index: 1;
-}
-
-/* ================= MOBILE RESPONSIVENESS (Max-width: 768px) ================= */
-@media (max-width: 768px) {
-
-  /* CLOSED STATE - SMALLER LAUNCHER BUTTON */
-  .vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(img[alt="open chat"]),
-  .vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(.f6dof8u.f6dof8w.f6dof8h) {
-    width: 70px !important;      /* Reduced from 100px */
-    height: 70px !important;     /* Reduced from 100px */
-    min-width: 70px !important;  /* Reduced from 100px */
-    min-height: 70px !important; /* Reduced from 100px */
-    max-width: 70px !important;  /* Reduced from 100px */
-    max-height: 70px !important; /* Reduced from 100px */
-    bottom: 10px !important;     /* Adjusted from 15px */
-    right: 10px !important;      /* Adjusted from 15px */
-  }
-
-  /* CLOSED STATE - SMALLER IMAGE INSIDE LAUNCHER */
-  .vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5 img.f6dof8u.f6dof8w.f6dof8h,
-  .vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5 img[alt="open chat"] {
-    width: 64px !important;      /* Reduced from 92px (maintaining border gap) */
-    height: 64px !important;     /* Reduced from 92px */
-    min-width: 64px !important;  /* Reduced from 92px */
-    min-height: 64px !important; /* Reduced from 92px */
-    max-width: 64px !important;  /* Reduced from 92px */
-    max-height: 64px !important; /* Reduced from 92px */
-  }
-
-  /* CLOSED STATE - MAIN CONTAINER POSITIONING */
-  ._1emja3f9:has(img[alt="open chat"]),
-  ._1emja3f9:not(:has(#voiceflow-chat)) {
-    bottom: 10px !important;     /* Adjusted from 15px */
-    right: 10px !important;      /* Adjusted from 15px */
-  }
-
-
-  /* PROACTIVE MESSAGE - REDUCED WIDTH & ADJUSTED POSITION */
-  /* Adjust vertical position relative to the smaller launcher icon */
-  ._6r9xee0 {
-    margin-bottom: 30px !important; /* Reduced from 60px */
-    /* Optionally reduce horizontal distance from edge */
-    /* right: 10px !important; */ /* Uncomment if needed */
-  }
-
-  /* Make the proactive message itself narrower */
-  div._6r9xee3.o231sh1 {
-    max-width: 280px !important; /* Limit width on smaller screens */
-    /* You might want to adjust padding or font size too */
-    /* padding: 10px 15px !important; */
-    /* font-size: 14px !important; */
-  }
-
-  /* PROACTIVE MESSAGE - Close button position adjust if needed */
-   /* ._6r9xeef._16qeg7m0._1q15b0b0.c26d8x0._1q15b0b2 {
-    top: 5px !important;
-    right: 5px !important;
-  } */
-
 }
