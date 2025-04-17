@@ -466,23 +466,25 @@ div._6r9xee3.o231sh1 > * {
     border: 3px solid #333 !important;
   }
 
-  /* Fix proactive messages alignment and scaling */
+  /* Fix proactive messages scaling */
   ._6r9xee3.o231sh1 {
     transform: scale(0.85) !important;
     transform-origin: bottom right !important;
     max-width: 280px !important; /* Allow message to be wider */
   }
 
-  /* Container for proactive messages - Corrected alignment and width behavior */
+  /* Container for proactive messages - Positioning ONLY */
   ._6r9xee0 {
     margin-bottom: 50px !important;
     right: 0 !important; /* Align container to parent's right edge */
     position: absolute !important;
     bottom: 100% !important;
-    display: flex !important; /* Make this a flex container */
-    flex-direction: column !important; /* Stack children vertically */
-    align-items: flex-end !important; /* Align children (message container) to the right */
-    /* Remove width and padding constraints to allow natural sizing */
+    /* Removed display:flex, flex-direction, align-items */
+  }
+
+  /* Inner container holding the message bubbles - Align items to the right */
+  ._6r9xee4 {
+     align-items: flex-end !important;
   }
 }
 
@@ -524,7 +526,7 @@ div._6r9xee3.o231sh1 > * {
     border: 3px solid #333 !important;
   }
 
-  /* Adjust proactive messages for small screens */
+  /* Adjust proactive messages scaling for small screens */
   ._6r9xee3.o231sh1 {
     transform: scale(0.8) !important;
     transform-origin: bottom right !important;
@@ -532,15 +534,18 @@ div._6r9xee3.o231sh1 > * {
      /* Ensure no relative positioning overrides */
   }
 
-  /* Container for proactive messages on small screens */
+  /* Container for proactive messages on small screens - Positioning ONLY */
   ._6r9xee0 {
     margin-bottom: 45px !important;
     right: 0 !important; /* Align container to parent's right edge */
     position: absolute !important; /* Reiterate for clarity */
     bottom: 100% !important; /* Reiterate for clarity */
-    display: flex !important; /* Make this a flex container */
-    flex-direction: column !important; /* Stack children vertically */
-    align-items: flex-end !important; /* Align children (message container) to the right */
+    /* Removed display:flex, flex-direction, align-items */
     /* Ensure no width/padding overrides */
+  }
+
+  /* Inner container holding the message bubbles - Align items to the right */
+   ._6r9xee4 {
+     align-items: flex-end !important;
   }
 }
