@@ -470,19 +470,16 @@ div._6r9xee3.o231sh1 > * {
   ._6r9xee3.o231sh1 {
     transform: scale(0.85) !important;
     transform-origin: bottom right !important;
-    margin-right: 0 !important;
-    right: 15px !important;
-    position: relative !important;
+    max-width: 280px !important; /* Allow message to be wider */
   }
 
-  /* Container for proactive messages */
+  /* Container for proactive messages - Corrected alignment and width behavior */
   ._6r9xee0 {
     margin-bottom: 50px !important;
-    right: 0 !important;
+    right: 15px !important; /* Align to the right edge (consistent with launcher) */
     position: absolute !important;
     bottom: 100% !important;
-    width: auto !important;
-    padding-right: 15px !important;
+    /* Remove width and padding constraints to allow natural sizing */
   }
 }
 
@@ -528,10 +525,14 @@ div._6r9xee3.o231sh1 > * {
   ._6r9xee3.o231sh1 {
     transform: scale(0.8) !important;
     transform-origin: bottom right !important;
+    max-width: 240px !important; /* Slightly narrower max-width for small screens */
+     /* Ensure no relative positioning overrides */
   }
 
   /* Container for proactive messages on small screens */
   ._6r9xee0 {
     margin-bottom: 45px !important;
+    right: 15px !important; /* Ensure alignment consistency */
+    /* Ensure no width/padding overrides */
   }
 }
