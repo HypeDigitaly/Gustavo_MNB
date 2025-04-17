@@ -476,9 +476,12 @@ div._6r9xee3.o231sh1 > * {
   /* Container for proactive messages - Corrected alignment and width behavior */
   ._6r9xee0 {
     margin-bottom: 50px !important;
-    right: 0 !important; /* Align to parent's right edge */
+    right: 0 !important; /* Align container to parent's right edge */
     position: absolute !important;
     bottom: 100% !important;
+    display: flex !important; /* Make this a flex container */
+    flex-direction: column !important; /* Stack children vertically */
+    align-items: flex-end !important; /* Align children (message container) to the right */
     /* Remove width and padding constraints to allow natural sizing */
   }
 }
@@ -532,9 +535,12 @@ div._6r9xee3.o231sh1 > * {
   /* Container for proactive messages on small screens */
   ._6r9xee0 {
     margin-bottom: 45px !important;
-    right: 0 !important; /* Align to parent's right edge */
+    right: 0 !important; /* Align container to parent's right edge */
     position: absolute !important; /* Reiterate for clarity */
     bottom: 100% !important; /* Reiterate for clarity */
+    display: flex !important; /* Make this a flex container */
+    flex-direction: column !important; /* Stack children vertically */
+    align-items: flex-end !important; /* Align children (message container) to the right */
     /* Ensure no width/padding overrides */
   }
 }
