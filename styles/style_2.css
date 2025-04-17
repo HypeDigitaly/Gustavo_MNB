@@ -412,3 +412,62 @@ div._6r9xee3.o231sh1 > * {
     position: relative;
     z-index: 1;
 }
+
+/* ================= MOBILE RESPONSIVENESS (Max-width: 768px) ================= */
+@media (max-width: 768px) {
+
+  /* CLOSED STATE - SMALLER LAUNCHER BUTTON */
+  .vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(img[alt="open chat"]),
+  .vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(.f6dof8u.f6dof8w.f6dof8h) {
+    width: 70px !important;      /* Reduced from 100px */
+    height: 70px !important;     /* Reduced from 100px */
+    min-width: 70px !important;  /* Reduced from 100px */
+    min-height: 70px !important; /* Reduced from 100px */
+    max-width: 70px !important;  /* Reduced from 100px */
+    max-height: 70px !important; /* Reduced from 100px */
+    bottom: 10px !important;     /* Adjusted from 15px */
+    right: 10px !important;      /* Adjusted from 15px */
+  }
+
+  /* CLOSED STATE - SMALLER IMAGE INSIDE LAUNCHER */
+  .vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5 img.f6dof8u.f6dof8w.f6dof8h,
+  .vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5 img[alt="open chat"] {
+    width: 64px !important;      /* Reduced from 92px (maintaining border gap) */
+    height: 64px !important;     /* Reduced from 92px */
+    min-width: 64px !important;  /* Reduced from 92px */
+    min-height: 64px !important; /* Reduced from 92px */
+    max-width: 64px !important;  /* Reduced from 92px */
+    max-height: 64px !important; /* Reduced from 92px */
+  }
+
+  /* CLOSED STATE - MAIN CONTAINER POSITIONING */
+  ._1emja3f9:has(img[alt="open chat"]),
+  ._1emja3f9:not(:has(#voiceflow-chat)) {
+    bottom: 10px !important;     /* Adjusted from 15px */
+    right: 10px !important;      /* Adjusted from 15px */
+  }
+
+
+  /* PROACTIVE MESSAGE - REDUCED WIDTH & ADJUSTED POSITION */
+  /* Adjust vertical position relative to the smaller launcher icon */
+  ._6r9xee0 {
+    margin-bottom: 30px !important; /* Reduced from 60px */
+    /* Optionally reduce horizontal distance from edge */
+    /* right: 10px !important; */ /* Uncomment if needed */
+  }
+
+  /* Make the proactive message itself narrower */
+  div._6r9xee3.o231sh1 {
+    max-width: 280px !important; /* Limit width on smaller screens */
+    /* You might want to adjust padding or font size too */
+    /* padding: 10px 15px !important; */
+    /* font-size: 14px !important; */
+  }
+
+  /* PROACTIVE MESSAGE - Close button position adjust if needed */
+   /* ._6r9xeef._16qeg7m0._1q15b0b0.c26d8x0._1q15b0b2 {
+    top: 5px !important;
+    right: 5px !important;
+  } */
+
+}
