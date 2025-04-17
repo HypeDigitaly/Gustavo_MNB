@@ -48,7 +48,7 @@ div.f6dof87.f6dof89 {
   max-width: 100px !important;
   max-height: 100px !important;
   background-color: white !important;
-  border: 4px solid #001D99 !important;
+  border: 2px solid #333 !important;
   border-radius: 50% !important;
   overflow: hidden !important;
   display: flex !important;
@@ -61,6 +61,14 @@ div.f6dof87.f6dof89 {
   position: fixed !important;
   bottom: 15px !important;
   right: 15px !important;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
+}
+
+/* Hover effect for closed state button */
+.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(img[alt="open chat"]):hover,
+.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(.f6dof8u.f6dof8w.f6dof8h):hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 0 15px rgba(51, 51, 51, 0.5) !important;
 }
 
 /* Additional selectors for parent container in closed state */
@@ -130,7 +138,7 @@ button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c
   min-height: 42px !important;
   max-width: 42px !important;
   max-height: 42px !important;
-  background-color: #001D99 !important;
+  background-color: #333 !important;
   border-radius: 9999px !important;
   overflow: hidden !important;
   transform: none !important;
@@ -230,7 +238,7 @@ button[label="Cancel"] span,
 /* Start new chat translation - all variations */
 button[label="Start new chat"],
 #vfrc-start-chat {
-  background-color: #001D99 !important;
+  background-color: #333 !important;
   border-radius: 4px !important;
   padding: 10px 20px !important;
 }
@@ -252,7 +260,7 @@ button[label="Start new chat"]::before,
 
 /* Cancel translation */
 button[label="Cancel"] {
-  background-color: #001D99 !important;
+  background-color: #333 !important;
   border-radius: 4px !important;
   padding: 10px 20px !important;
 }
@@ -384,7 +392,7 @@ div._6r9xee3.o231sh1 {
   position: relative !important;
   z-index: 0 !important;
   border-radius: 10px !important;
-  background-color: #001D99 !important;
+  background-color: #333 !important;
   color: #1a1e23 !important;
   opacity: 1 !important;
 
