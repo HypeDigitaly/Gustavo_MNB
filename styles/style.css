@@ -33,21 +33,18 @@ button.vfrc-launcher > div {
 }
 
 /* ================= CLOSED STATE STYLING ================= */
-/* State assumption: closed state is detected via the presence of
-   img.vfrc-launcher--media-icon or img[alt="open chat"] inside the button.
-   This assumes these image elements are NOT present simultaneously with
-   svg.vfrc-launcher__chevron (the opened-state indicator). If both exist
-   at the same time during a transition, the cascade order of the closed-state
-   and opened-state rules below will determine the final computed values. */
+/* Closed state: detected by presence of the avatar image.
+   Note: svg.vfrc-launcher__chevron coexists with the image in closed state,
+   so opened-state selectors use :not(:has(img...)) to avoid false matches. */
 /* Parent containers in closed state */
 button.vfrc-button.vfrc-launcher:has(img.vfrc-launcher--media-icon),
 button.vfrc-button.vfrc-launcher:has(img[alt="open chat"]) {
-  width: 100px !important;
-  height: 100px !important;
-  min-width: 100px !important;
-  min-height: 100px !important;
-  max-width: 100px !important;
-  max-height: 100px !important;
+  width: 72px !important;
+  height: 72px !important;
+  min-width: 72px !important;
+  min-height: 72px !important;
+  max-width: 72px !important;
+  max-height: 72px !important;
   background-color: white !important;
   border: 2px solid #333 !important;
   border-radius: 50% !important;
@@ -93,12 +90,12 @@ button.vfrc-button.vfrc-launcher:has(img.vfrc-launcher--media-icon) .vfrc-launch
 /* Target the actual image in closed state - Apply size, cover, and radius */
 button.vfrc-launcher img.vfrc-launcher--media-icon,
 button.vfrc-launcher img[alt="open chat"] {
-  width: 92px !important;   /* Size to fit inside the border */
-  height: 92px !important;  /* Size to fit inside the border */
-  min-width: 92px !important;
-  min-height: 92px !important;
-  max-width: 92px !important;
-  max-height: 92px !important;
+  width: 64px !important;   /* Size to fit inside 72px button with 2px border */
+  height: 64px !important;  /* Size to fit inside 72px button with 2px border */
+  min-width: 64px !important;
+  min-height: 64px !important;
+  max-width: 64px !important;
+  max-height: 64px !important;
   border-radius: 50% !important; /* Make image circular */
   object-fit: cover !important;  /* Fill the 92x92 space */
   object-position: center !important;
@@ -121,14 +118,11 @@ div.vfrc-launcher__container:has(#voiceflow-chat) {
   align-items: flex-end !important;
 }
 
-/* State assumption: opened state is detected via the presence of
-   svg.vfrc-launcher__chevron inside the button.
-   This assumes svg.vfrc-launcher__chevron is NOT present simultaneously with
-   img.vfrc-launcher--media-icon or img[alt="open chat"] (the closed-state indicators).
-   If both exist at the same time during a transition, the cascade order of the
-   opened-state and closed-state rules determines the final computed values. */
-/* Button in opened state - INCREASED SIZE TO 42x42 FROM 36x36 */
-button.vfrc-button.vfrc-launcher:has(svg.vfrc-launcher__chevron) {
+/* Opened state: detected by chevron SVG present AND image absent.
+   The :not(:has(img.vfrc-launcher--media-icon)) prevents this from matching
+   in closed state where both the chevron SVG and image coexist in the DOM. */
+/* Button in opened state - 42x42 */
+button.vfrc-button.vfrc-launcher:has(svg.vfrc-launcher__chevron):not(:has(img.vfrc-launcher--media-icon)) {
   width: 42px !important;
   height: 42px !important;
   min-width: 42px !important;
@@ -151,7 +145,7 @@ button.vfrc-button.vfrc-launcher:has(svg.vfrc-launcher__chevron) {
 }
 
 /* Container for svg in opened state */
-button.vfrc-button.vfrc-launcher:has(svg.vfrc-launcher__chevron) .vfrc-launcher__inner {
+button.vfrc-button.vfrc-launcher:has(svg.vfrc-launcher__chevron):not(:has(img.vfrc-launcher--media-icon)) .vfrc-launcher__inner {
   width: 42px !important;
   height: 42px !important;
   min-width: 42px !important;
@@ -160,8 +154,8 @@ button.vfrc-button.vfrc-launcher:has(svg.vfrc-launcher__chevron) .vfrc-launcher_
   max-height: 42px !important;
 }
 
-/* Arrow icon in opened state - INCREASED PROPORTIONALLY */
-button.vfrc-button.vfrc-launcher:has(svg.vfrc-launcher__chevron) svg.vfrc-launcher__chevron {
+/* Arrow icon in opened state */
+button.vfrc-button.vfrc-launcher:has(svg.vfrc-launcher__chevron):not(:has(img.vfrc-launcher--media-icon)) svg.vfrc-launcher__chevron {
   width: 21px !important;
   height: 21px !important;
   transform: none !important;
