@@ -1,14 +1,9 @@
 /* ================= RESET ALL BUTTON CONTAINERS FIRST ================= */
 /* Reset all button containers to remove potentially problematic default styling */
-.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5,
-button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5,
+button.vfrc-button.vfrc-launcher,
 .vfrc-launcher,
-.f6dof81,
-.f6dof87.f6dof89,
-.f6dof86.f6dof88,
-div.f6dof87.f6dof89,
-div.f6dof8m.f6dof8o.f6dof8r.f6dof8f,
-div.f6dof87.f6dof89 {
+.vfrc-launcher__inner,
+button.vfrc-launcher > div {
   width: auto !important;
   height: auto !important;
   min-width: auto !important;
@@ -19,28 +14,34 @@ div.f6dof87.f6dof89 {
 
 /* ================= MAIN CONTAINER STYLING (APPLIES TO BOTH STATES) ================= */
 /* Main container positioning */
-._1emja3f9 {
+.vfrc-launcher__container {
   position: fixed !important;
   z-index: 9999 !important;
 }
 
 /* CLOSED STATE - specific positioning */
-._1emja3f9:has(img[alt="open chat"]),
-._1emja3f9:not(:has(#voiceflow-chat)) {
+.vfrc-launcher__container:has(img[alt="open chat"]),
+.vfrc-launcher__container:not(:has(#voiceflow-chat)) {
   bottom: 15px !important;
   right: 15px !important;
 }
 
 /* OPENED STATE - specific positioning */
-._1emja3f9:has(#voiceflow-chat) {
+.vfrc-launcher__container:has(#voiceflow-chat) {
   bottom: 0 !important;
   right: 0 !important;
 }
 
 /* ================= CLOSED STATE STYLING ================= */
+/* State assumption: closed state is detected via the presence of
+   img.vfrc-launcher--media-icon or img[alt="open chat"] inside the button.
+   This assumes these image elements are NOT present simultaneously with
+   svg.vfrc-launcher__chevron (the opened-state indicator). If both exist
+   at the same time during a transition, the cascade order of the closed-state
+   and opened-state rules below will determine the final computed values. */
 /* Parent containers in closed state */
-.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(img[alt="open chat"]),
-.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(.f6dof8u.f6dof8w.f6dof8h) {
+button.vfrc-button.vfrc-launcher:has(img.vfrc-launcher--media-icon),
+button.vfrc-button.vfrc-launcher:has(img[alt="open chat"]) {
   width: 100px !important;
   height: 100px !important;
   min-width: 100px !important;
@@ -65,25 +66,15 @@ div.f6dof87.f6dof89 {
 }
 
 /* Hover effect for closed state button */
-.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(img[alt="open chat"]):hover,
-.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(.f6dof8u.f6dof8w.f6dof8h):hover {
+button.vfrc-button.vfrc-launcher:has(img.vfrc-launcher--media-icon):hover,
+button.vfrc-button.vfrc-launcher:has(img[alt="open chat"]):hover {
   transform: scale(1.05) !important;
   box-shadow: 0 0 15px rgba(51, 51, 51, 0.5) !important;
 }
 
-/* Additional selectors for parent container in closed state */
-div.f6dof80:has(img[alt="open chat"]) {
-  width: 100px !important;
-  height: 100px !important;
-  min-width: 100px !important;
-  min-height: 100px !important;
-  max-width: 100px !important;
-  max-height: 100px !important;
-}
-
 /* Immediate image container in closed state - Minimal styling */
-.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(img[alt="open chat"]) div.f6dof87.f6dof89,
-.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(img[alt="open chat"]) div.f6dof86.f6dof88 {
+button.vfrc-button.vfrc-launcher:has(img[alt="open chat"]) .vfrc-launcher__inner,
+button.vfrc-button.vfrc-launcher:has(img.vfrc-launcher--media-icon) .vfrc-launcher__inner {
   /* Remove sizing, radius, overflow - let the button and image handle it */
   width: auto !important;
   height: auto !important;
@@ -100,8 +91,8 @@ div.f6dof80:has(img[alt="open chat"]) {
 }
 
 /* Target the actual image in closed state - Apply size, cover, and radius */
-.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5 img.f6dof8u.f6dof8w.f6dof8h,
-.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5 img[alt="open chat"] {
+button.vfrc-launcher img.vfrc-launcher--media-icon,
+button.vfrc-launcher img[alt="open chat"] {
   width: 92px !important;   /* Size to fit inside the border */
   height: 92px !important;  /* Size to fit inside the border */
   min-width: 92px !important;
@@ -124,14 +115,20 @@ div.f6dof80:has(img[alt="open chat"]) {
 
 /* ================= OPENED STATE STYLING ================= */
 /* Main container in opened state */
-div._1emja3f9:has(#voiceflow-chat) {
+div.vfrc-launcher__container:has(#voiceflow-chat) {
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-end !important;
 }
 
+/* State assumption: opened state is detected via the presence of
+   svg.vfrc-launcher__chevron inside the button.
+   This assumes svg.vfrc-launcher__chevron is NOT present simultaneously with
+   img.vfrc-launcher--media-icon or img[alt="open chat"] (the closed-state indicators).
+   If both exist at the same time during a transition, the cascade order of the
+   opened-state and closed-state rules determines the final computed values. */
 /* Button in opened state - INCREASED SIZE TO 42x42 FROM 36x36 */
-button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(svg[viewBox="0 0 32 32"]) {
+button.vfrc-button.vfrc-launcher:has(svg.vfrc-launcher__chevron) {
   width: 42px !important;
   height: 42px !important;
   min-width: 42px !important;
@@ -153,18 +150,8 @@ button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c
   right: auto !important; /* Override right from the default */
 }
 
-/* Additional selectors for parent container in opened state */
-div.f6dof80:has(svg[viewBox="0 0 32 32"]) {
-  width: 42px !important;
-  height: 42px !important;
-  min-width: 42px !important;
-  min-height: 42px !important;
-  max-width: 42px !important;
-  max-height: 42px !important;
-}
-
 /* Container for svg in opened state */
-button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(svg[viewBox="0 0 32 32"]) div.f6dof87.f6dof89 {
+button.vfrc-button.vfrc-launcher:has(svg.vfrc-launcher__chevron) .vfrc-launcher__inner {
   width: 42px !important;
   height: 42px !important;
   min-width: 42px !important;
@@ -174,7 +161,7 @@ button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c
 }
 
 /* Arrow icon in opened state - INCREASED PROPORTIONALLY */
-button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(svg[viewBox="0 0 32 32"]) svg {
+button.vfrc-button.vfrc-launcher:has(svg.vfrc-launcher__chevron) svg.vfrc-launcher__chevron {
   width: 21px !important;
   height: 21px !important;
   transform: none !important;
