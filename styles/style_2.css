@@ -1,165 +1,106 @@
-/* ================= RESET ALL BUTTON CONTAINERS FIRST ================= */
-/* Reset all button containers to remove potentially problematic default styling */
-button.vfrc-button.vfrc-launcher,
-.vfrc-launcher,
-.vfrc-launcher__inner,
-button.vfrc-launcher > div {
-  width: auto !important;
-  height: auto !important;
-  min-width: auto !important;
-  min-height: auto !important;
-  max-width: none !important;
-  max-height: none !important;
-}
-
-/* ================= MAIN CONTAINER STYLING (APPLIES TO BOTH STATES) ================= */
-/* Main container positioning */
+/* ================= LAUNCHER CONTAINER ================= */
 .vfrc-launcher__container {
-  position: fixed !important;
   z-index: 9999 !important;
 }
 
-/* CLOSED STATE - specific positioning */
-.vfrc-launcher__container:has(img[alt="open chat"]),
-.vfrc-launcher__container:not(:has(#voiceflow-chat)) {
-  bottom: 15px !important;
-  right: 15px !important;
-}
-
-/* OPENED STATE - specific positioning */
-.vfrc-launcher__container:has(#voiceflow-chat) {
-  bottom: 0 !important;
-  right: 0 !important;
-}
-
-/* ================= CLOSED STATE STYLING ================= */
-/* Closed state: detected by presence of the avatar image.
-   Note: svg.vfrc-launcher__chevron coexists with the image in closed state,
-   so opened-state selectors use :not(:has(img...)) to avoid false matches. */
-/* Parent containers in closed state */
-button.vfrc-button.vfrc-launcher:has(img.vfrc-launcher--media-icon),
-button.vfrc-button.vfrc-launcher:has(img[alt="open chat"]) {
+/* ================= LAUNCHER - CLOSED STATE (title="Open chat agent") ================= */
+.vfrc-launcher[title="Open chat agent"] {
+  background: white !important;
+  border: 2px solid #333 !important;
   width: 72px !important;
   height: 72px !important;
   min-width: 72px !important;
   min-height: 72px !important;
   max-width: 72px !important;
   max-height: 72px !important;
-  background-color: white !important;
-  border: 2px solid #333 !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
   padding: 0 !important;
-  margin: 0 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
   box-sizing: border-box !important;
-  transform: none !important;
-  position: fixed !important;
-  bottom: 15px !important;
-  right: 15px !important;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
 }
 
-/* Hover effect for closed state button */
-button.vfrc-button.vfrc-launcher:has(img.vfrc-launcher--media-icon):hover,
-button.vfrc-button.vfrc-launcher:has(img[alt="open chat"]):hover {
+.vfrc-launcher[title="Open chat agent"] .vfrc-launcher__inner {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+}
+
+.vfrc-launcher[title="Open chat agent"] .vfrc-launcher__chevron {
+  display: none !important;
+}
+
+.vfrc-launcher[title="Open chat agent"] .vfrc-launcher--media-icon {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.vfrc-launcher[title="Open chat agent"]:hover {
   transform: scale(1.05) !important;
   box-shadow: 0 0 15px rgba(51, 51, 51, 0.5) !important;
 }
 
-/* Immediate image container in closed state - Minimal styling */
-button.vfrc-button.vfrc-launcher:has(img[alt="open chat"]) .vfrc-launcher__inner,
-button.vfrc-button.vfrc-launcher:has(img.vfrc-launcher--media-icon) .vfrc-launcher__inner {
-  /* Remove sizing, radius, overflow - let the button and image handle it */
-  width: auto !important;
-  height: auto !important;
-  min-width: auto !important;
-  min-height: auto !important;
-  max-width: none !important;
-  max-height: none !important;
-  display: flex !important; /* Keep flex for alignment if needed */
-  align-items: center !important;
-  justify-content: center !important;
-  border-radius: 0 !important;
-  overflow: visible !important;
-  box-sizing: border-box !important;
-}
-
-/* Target the actual image in closed state - Apply size, cover, and radius */
-button.vfrc-launcher img.vfrc-launcher--media-icon,
-button.vfrc-launcher img[alt="open chat"] {
-  width: 64px !important;   /* Size to fit inside 72px button with 2px border */
-  height: 64px !important;  /* Size to fit inside 72px button with 2px border */
-  min-width: 64px !important;
-  min-height: 64px !important;
-  max-width: 64px !important;
-  max-height: 64px !important;
-  border-radius: 50% !important; /* Make image circular */
-  object-fit: cover !important;  /* Fill the 92x92 space */
-  object-position: center !important;
-  display: block !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
-  transform: none !important;
-  /* overflow: hidden !important; /* Redundant if parent button clips */
-}
-
-/* Keyframes for the image glow pulse */
-/* @keyframes pulseImageGlow { ... } */ /* Commented out as animation is removed */
-
-/* ================= OPENED STATE STYLING ================= */
-/* Main container in opened state */
-div.vfrc-launcher__container:has(#voiceflow-chat) {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-end !important;
-}
-
-/* Opened state: detected by chevron SVG present AND image absent.
-   The :not(:has(img.vfrc-launcher--media-icon)) prevents this from matching
-   in closed state where both the chevron SVG and image coexist in the DOM. */
-/* Button in opened state - 42x42 */
-button.vfrc-button.vfrc-launcher:has(svg.vfrc-launcher__chevron):not(:has(img.vfrc-launcher--media-icon)) {
-  width: 42px !important;
-  height: 42px !important;
-  min-width: 42px !important;
-  min-height: 42px !important;
-  max-width: 42px !important;
-  max-height: 42px !important;
+/* ================= LAUNCHER - OPENED STATE (title="Close chat agent") ================= */
+.vfrc-launcher[title="Close chat agent"] {
   background-color: #333 !important;
-  border-radius: 9999px !important;
-  overflow: hidden !important;
-  transform: none !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin-top: 15px !important;
-  margin-right: 15px !important;
-  margin-bottom: 15px !important;
-  position: relative !important; /* Override fixed position from the default */
-  bottom: auto !important; /* Override bottom from the default */
-  right: auto !important; /* Override right from the default */
-}
-
-/* Container for svg in opened state */
-button.vfrc-button.vfrc-launcher:has(svg.vfrc-launcher__chevron):not(:has(img.vfrc-launcher--media-icon)) .vfrc-launcher__inner {
+  border: none !important;
   width: 42px !important;
   height: 42px !important;
   min-width: 42px !important;
   min-height: 42px !important;
   max-width: 42px !important;
   max-height: 42px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
 }
 
-/* Arrow icon in opened state */
-button.vfrc-button.vfrc-launcher:has(svg.vfrc-launcher__chevron):not(:has(img.vfrc-launcher--media-icon)) svg.vfrc-launcher__chevron {
+.vfrc-launcher[title="Close chat agent"]:hover {
+  background-color: #333 !important;
+}
+
+.vfrc-launcher[title="Close chat agent"] .vfrc-launcher__inner {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  min-height: 42px !important;
+  max-width: 42px !important;
+  max-height: 42px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+}
+
+.vfrc-launcher[title="Close chat agent"] .vfrc-launcher__chevron {
+  display: block !important;
   width: 21px !important;
   height: 21px !important;
-  transform: none !important;
-  object-fit: contain !important;
+  color: white !important;
+}
+
+.vfrc-launcher[title="Close chat agent"] .vfrc-launcher__chevron path {
+  fill: white !important;
+}
+
+.vfrc-launcher[title="Close chat agent"] .vfrc-launcher--media-icon {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 /* ================= BUTTON TEXT REPLACEMENT ================= */
